@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#008577</color>
+	<color name="colorPrimaryDark">#00574B</color>
+	<color name="colorAccent">#D81B60</color>
+
+	<color name="hijauku">#0BCA58</color>
+	<color name="merahku">#E0213E</color>
+	<color name="unguku">#B824D1</color>
+	<color name="biruku">#3A5BF3</color>
+	<color name="hijaubaru">#03AD20</color>
+	<color name="kuningku">#E7F83F</color>
+	<color name="birubaru">#2CB8F7</color>
+
+
+
+
+
+
+</resources>
