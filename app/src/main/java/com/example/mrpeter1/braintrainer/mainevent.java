@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
@@ -24,6 +25,7 @@ public class mainevent extends AppCompatActivity {
     int numberOfQuestions = 0;
     Button button0, button1, button2, button3, btnplayagain;
     ConstraintLayout gameLayout,idgameLayout;
+    GridLayout gridLayout;
 
     public void chooseAnswer(View view){
        // Log.i("tag : ", view.getTag().toString()); // memdapatkan tag button jawaban yang dipilih
@@ -91,6 +93,10 @@ public class mainevent extends AppCompatActivity {
         newQuestion();
         resultTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
         btnplayagain.setVisibility(view.INVISIBLE);
+        button0.setEnabled(true);
+        button1.setEnabled(true);
+        button2.setEnabled(true);
+        button3.setEnabled(true);
 
         //---------------------------------- timer ------------------------------------
 
@@ -107,6 +113,10 @@ public class mainevent extends AppCompatActivity {
                 information.setText("DONE!");
                 //btnmulai.setText("PLAY AGAIN");
                 btnplayagain.setVisibility(View.VISIBLE);
+                button0.setEnabled(false);
+                button1.setEnabled(false);
+                button2.setEnabled(false);
+                button3.setEnabled(false);
 
             }
         }.start();
@@ -125,6 +135,7 @@ public class mainevent extends AppCompatActivity {
         btnplayagain = findViewById(R.id.btnplayagain);
         gameLayout = findViewById(R.id.gameLayout);
         idgameLayout = findViewById(R.id.idgameLayout);
+
 
 
         button0 = findViewById(R.id.button0);
