@@ -21,6 +21,7 @@ public class mainevent extends AppCompatActivity {
     int locationCorrectAnswer;
     int score = 0;
     int numberOfQuestions = 0;
+    Button button0, button1, button2, button3;
 
 
     public void chooseAnswer(View view){
@@ -39,27 +40,15 @@ public class mainevent extends AppCompatActivity {
         }
         numberOfQuestions++;
         resultTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
+        newQuestion();
 
     }
 
     public void mulaigame(View view){
 
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mainevent);
-        textView = findViewById(R.id.textView);
-        textwaktu = findViewById(R.id.textwaktu);
-        information = findViewById(R.id.information);
-        btnmulai = findViewById(R.id.btnmulai);
-        resultTextView = findViewById(R.id.resultTextView);
 
-        Button button0 = findViewById(R.id.button0);
-        Button button1 = findViewById(R.id.button1);
-        Button button2 = findViewById(R.id.button2);
-        Button button3 = findViewById(R.id.button3);
-
+    public void newQuestion(){
 
         Random rand = new Random();
         int a = rand.nextInt(21);
@@ -67,6 +56,7 @@ public class mainevent extends AppCompatActivity {
         textView.setText(Integer.toString(a) + " + " + Integer.toString(b));
 
         locationCorrectAnswer =rand.nextInt(4);
+        answer.clear();
         for (int i= 0; i < 4; i++){
 
             if (i == locationCorrectAnswer){
@@ -86,6 +76,24 @@ public class mainevent extends AppCompatActivity {
         button1.setText(Integer.toString(answer.get(1)));
         button2.setText(Integer.toString(answer.get(2)));
         button3.setText(Integer.toString(answer.get(3)));
+
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mainevent);
+        textView = findViewById(R.id.textView);
+        textwaktu = findViewById(R.id.textwaktu);
+        information = findViewById(R.id.information);
+        btnmulai = findViewById(R.id.btnmulai);
+        resultTextView = findViewById(R.id.resultTextView);
+
+         button0 = findViewById(R.id.button0);
+         button1 = findViewById(R.id.button1);
+         button2 = findViewById(R.id.button2);
+         button3 = findViewById(R.id.button3);
+
+        newQuestion();
 
 
         //---------------------------------- timer ------------------------------------
