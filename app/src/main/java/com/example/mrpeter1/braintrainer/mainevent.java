@@ -18,7 +18,9 @@ public class mainevent extends AppCompatActivity {
     ArrayList<Integer> answer = new ArrayList<>();
     TextView textwaktu , information ;
     Button btnmulai;
-
+    public void chooseAnswer(View view){
+        Log.i("tag : ", view.getTag().toString()); // memdapatkan tag button jawaban yang dipilih
+    }
 
     public void mulaigame(View view){
 
@@ -71,7 +73,7 @@ public class mainevent extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 Log.i("secong left", String.valueOf((millisUntilFinished / 1000)));
-                textwaktu.setText(String.valueOf((millisUntilFinished / 1000)));
+                textwaktu.setText(String.valueOf((millisUntilFinished / 1000)+"S"));
             }
 
             @Override
