@@ -16,18 +16,29 @@ import java.util.Random;
 public class mainevent extends AppCompatActivity {
     TextView textView;
     ArrayList<Integer> answer = new ArrayList<>();
-    TextView textwaktu , information ;
+    TextView textwaktu , information, resultTextView;
     Button btnmulai;
     int locationCorrectAnswer;
+    int score = 0;
+    int numberOfQuestions = 0;
+
 
     public void chooseAnswer(View view){
        // Log.i("tag : ", view.getTag().toString()); // memdapatkan tag button jawaban yang dipilih
+        //Pada bahasa pemrograman Java, didalam library String, terdapat sebuah method bernama equals(), method tersebut digunakan untuk membandingkan 2 buah variable,
+        // yang bertipe data String, jika nilai dari kedua variable tersebut mempunyai karakter yang sama, baik dari segi huruf besar,
+        // huruf kecil atau spasi, maka akan menghasilkan nilai boolean true dan jika tidak sesuai, maka akan menghasilkan nilai false.
         if  (Integer.toString(locationCorrectAnswer).equals(view.getTag().toString())){ // membandingkan jawaban yang di pilih dengan soalnya
             Log.i("correct!","you got it");
+            information.setText("Correct!");
+            score++;
 
         } else {
             Log.i("incorrect","try again");
+            information.setText("Incorect");
         }
+        numberOfQuestions++;
+        resultTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
 
     }
 
@@ -42,6 +53,7 @@ public class mainevent extends AppCompatActivity {
         textwaktu = findViewById(R.id.textwaktu);
         information = findViewById(R.id.information);
         btnmulai = findViewById(R.id.btnmulai);
+        resultTextView = findViewById(R.id.resultTextView);
 
         Button button0 = findViewById(R.id.button0);
         Button button1 = findViewById(R.id.button1);
