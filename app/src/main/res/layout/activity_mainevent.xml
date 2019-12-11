@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/gameLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".mainevent">
@@ -10,142 +11,174 @@
 		android:id="@+id/btnmulai"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="500dp"
+		android:layout_marginTop="512dp"
 		android:layout_marginEnd="148dp"
 		android:background="@color/colorAccent"
 		android:onClick="mulaigame"
 		android:text="mulai"
 		android:textAlignment="center"
 		android:textSize="30sp"
+		android:visibility="visible"
 		app:layout_columnWeight="1"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.18"
+		app:layout_constraintHorizontal_bias="0.93"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		app:layout_rowWeight="1" />
 
-	<TextView
-
-		android:id="@+id/resultTextView"
-		android:layout_width="90dp"
-		android:layout_height="52dp"
-		android:layout_marginTop="52dp"
-		android:layout_marginEnd="16dp"
-		android:background="@color/birubaru"
-		android:text="S"
-		android:textAlignment="center"
-		android:textSize="30sp"
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/idgameLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<TextView
-		android:id="@+id/textwaktu"
-		android:layout_width="90dp"
-		android:layout_height="52dp"
-		android:layout_marginStart="24dp"
-		android:layout_marginTop="52dp"
-		android:background="@color/kuningku"
-		android:text="MM"
-		android:textAlignment="center"
-		android:textSize="30sp"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<TextView
-		android:id="@+id/textView"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="64dp"
-		android:text="13 X 4"
-		android:textSize="20sp"
-		app:layout_constraintEnd_toStartOf="@+id/resultTextView"
-		app:layout_constraintStart_toEndOf="@+id/textwaktu"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<androidx.gridlayout.widget.GridLayout
-		android:id="@+id/gridLayout"
-		android:layout_width="350dp"
-		android:layout_height="200dp"
-		android:layout_marginTop="30dp"
-		app:columnCount="2"
-		app:layout_constraintEnd_toEndOf="parent"
-
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textView"
-		app:rowCount="2">
+		app:layout_constraintTop_toTopOf="parent">
 
 		<Button
-			android:onClick="chooseAnswer"
-			android:id="@+id/button0"
-			android:layout_marginRight="10dp"
-			android:layout_marginBottom="5dp"
-			android:background="@color/merahku"
-			android:gravity="fill"
-			android:tag="0"
-			android:text="GO"
+			android:id="@+id/btnplayagain"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="436dp"
+			android:background="@color/colorPrimaryDark"
+			android:onClick="playagain"
+			android:text="Play again"
 			android:textAlignment="center"
-			android:textSize="60sp"
+			android:textSize="30sp"
+			android:visibility="invisible"
 			app:layout_columnWeight="1"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_rowWeight="1" />
+			app:layout_constraintHorizontal_bias="0.497"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_rowWeight="1"
+			tools:visibility="invisible" />
 
-		<Button
-			android:onClick="chooseAnswer"
-			android:id="@+id/button1"
-			android:layout_marginLeft="10dp"
-			android:layout_marginBottom="5dp"
-			android:background="@color/unguku"
-			android:gravity="fill"
-			android:tag="1"
-			android:text="GO"
+		<TextView
+
+			android:id="@+id/resultTextView"
+			android:layout_width="90dp"
+			android:layout_height="52dp"
+			android:layout_marginTop="52dp"
+			android:layout_marginEnd="16dp"
+			android:background="@color/birubaru"
+			android:text="S"
 			android:textAlignment="center"
-			android:textSize="60sp"
-			app:layout_columnWeight="1"
+			android:textSize="30sp"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_rowWeight="1" />
+			app:layout_constraintTop_toTopOf="parent" />
 
-		<Button
-			android:onClick="chooseAnswer"
-			android:id="@+id/button2"
-			android:layout_marginTop="5dp"
-			android:layout_marginRight="10dp"
-			android:background="@color/biruku"
-			android:gravity="fill"
-			android:tag="2"
-			android:text="GO"
+		<TextView
+			android:id="@+id/textwaktu"
+			android:layout_width="90dp"
+			android:layout_height="52dp"
+			android:layout_marginStart="24dp"
+			android:layout_marginTop="52dp"
+			android:background="@color/kuningku"
+			android:text="MM"
 			android:textAlignment="center"
-			android:textSize="60sp"
-			app:layout_columnWeight="1"
+			android:textSize="30sp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/textView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="64dp"
+			android:text="13 X 4"
+			android:textSize="20sp"
+			app:layout_constraintEnd_toStartOf="@+id/resultTextView"
+			app:layout_constraintStart_toEndOf="@+id/textwaktu"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<androidx.gridlayout.widget.GridLayout
+			android:id="@+id/gridLayout"
+			android:layout_width="350dp"
+			android:layout_height="200dp"
+			android:layout_marginTop="30dp"
+			app:columnCount="2"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_rowWeight="1" />
 
-		<Button
-			android:onClick="chooseAnswer"
-			android:id="@+id/button3"
-			android:layout_marginLeft="10dp"
-			android:layout_marginTop="5dp"
-			android:background="@color/hijaubaru"
-			android:gravity="fill"
-			android:tag="3"
-			android:text="GO"
-			android:textAlignment="center"
-			android:textSize="60sp"
-			app:layout_columnWeight="1"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/textView"
+			app:rowCount="2">
+
+			<Button
+				android:id="@+id/button0"
+				android:layout_marginRight="10dp"
+				android:layout_marginBottom="5dp"
+				android:background="@color/merahku"
+				android:gravity="fill"
+				android:onClick="chooseAnswer"
+				android:tag="0"
+				android:text="GO"
+				android:textAlignment="center"
+				android:textSize="60sp"
+				app:layout_columnWeight="1"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_rowWeight="1" />
+
+			<Button
+				android:id="@+id/button1"
+				android:layout_marginLeft="10dp"
+				android:layout_marginBottom="5dp"
+				android:background="@color/unguku"
+				android:gravity="fill"
+				android:onClick="chooseAnswer"
+				android:tag="1"
+				android:text="GO"
+				android:textAlignment="center"
+				android:textSize="60sp"
+				app:layout_columnWeight="1"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_rowWeight="1" />
+
+			<Button
+				android:id="@+id/button2"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="10dp"
+				android:background="@color/biruku"
+				android:gravity="fill"
+				android:onClick="chooseAnswer"
+				android:tag="2"
+				android:text="GO"
+				android:textAlignment="center"
+				android:textSize="60sp"
+				app:layout_columnWeight="1"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_rowWeight="1" />
+
+			<Button
+				android:id="@+id/button3"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="5dp"
+				android:background="@color/hijaubaru"
+				android:gravity="fill"
+				android:onClick="chooseAnswer"
+				android:tag="3"
+				android:text="GO"
+				android:textAlignment="center"
+				android:textSize="60sp"
+				app:layout_columnWeight="1"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_rowWeight="1" />
+
+		</androidx.gridlayout.widget.GridLayout>
+
+		<TextView
+			android:id="@+id/information"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="28dp"
+			android:text="Correct !"
+			android:textSize="50sp"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_rowWeight="1" />
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
-	</androidx.gridlayout.widget.GridLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
-	<TextView
-		android:id="@+id/information"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="72dp"
-		android:text="Correct !"
-		android:textSize="50sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.5"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

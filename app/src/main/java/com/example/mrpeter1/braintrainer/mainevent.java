@@ -1,6 +1,7 @@
 package com.example.mrpeter1.braintrainer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -21,8 +22,8 @@ public class mainevent extends AppCompatActivity {
     int locationCorrectAnswer;
     int score = 0;
     int numberOfQuestions = 0;
-    Button button0, button1, button2, button3;
-
+    Button button0, button1, button2, button3, btnplayagain;
+    ConstraintLayout gameLayout,idgameLayout;
 
     public void chooseAnswer(View view){
        // Log.i("tag : ", view.getTag().toString()); // memdapatkan tag button jawaban yang dipilih
@@ -45,6 +46,9 @@ public class mainevent extends AppCompatActivity {
     }
 
     public void mulaigame(View view){
+        playagain(findViewById(R.id.textwaktu));
+        btnmulai.setVisibility(View.INVISIBLE);
+        idgameLayout.setVisibility(View.VISIBLE);
 
     }
 
@@ -78,23 +82,15 @@ public class mainevent extends AppCompatActivity {
         button3.setText(Integer.toString(answer.get(3)));
 
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mainevent);
-        textView = findViewById(R.id.textView);
-        textwaktu = findViewById(R.id.textwaktu);
-        information = findViewById(R.id.information);
-        btnmulai = findViewById(R.id.btnmulai);
-        resultTextView = findViewById(R.id.resultTextView);
 
-         button0 = findViewById(R.id.button0);
-         button1 = findViewById(R.id.button1);
-         button2 = findViewById(R.id.button2);
-         button3 = findViewById(R.id.button3);
-
+    //================================= button play again====================================
+    public void playagain(View view){
+        score = 0;
+        numberOfQuestions = 0;
+        textwaktu.setText("30");
         newQuestion();
-
+        resultTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
+        btnplayagain.setVisibility(view.INVISIBLE);
 
         //---------------------------------- timer ------------------------------------
 
@@ -109,10 +105,36 @@ public class mainevent extends AppCompatActivity {
             public void onFinish() {
                 Log.i("were done", "no more countdown");
                 information.setText("DONE!");
-                btnmulai.setText("PLAY AGAIN");
+                //btnmulai.setText("PLAY AGAIN");
+                btnplayagain.setVisibility(View.VISIBLE);
 
             }
         }.start();
+
+
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mainevent);
+        textView = findViewById(R.id.textView);
+        textwaktu = findViewById(R.id.textwaktu);
+        information = findViewById(R.id.information);
+        btnmulai = findViewById(R.id.btnmulai);
+        resultTextView = findViewById(R.id.resultTextView);
+        btnplayagain = findViewById(R.id.btnplayagain);
+        gameLayout = findViewById(R.id.gameLayout);
+        idgameLayout = findViewById(R.id.idgameLayout);
+
+
+        button0 = findViewById(R.id.button0);
+         button1 = findViewById(R.id.button1);
+         button2 = findViewById(R.id.button2);
+         button3 = findViewById(R.id.button3);
+
+        btnmulai.setVisibility(View.VISIBLE);
+        idgameLayout.setVisibility(View.INVISIBLE);
+
 
 
     }
