@@ -16,7 +16,8 @@ import java.util.Random;
 public class mainevent extends AppCompatActivity {
     TextView textView;
     ArrayList<Integer> answer = new ArrayList<>();
-    TextView textwaktu ;
+    TextView textwaktu , information ;
+    Button btnmulai;
 
 
     public void mulaigame(View view){
@@ -28,6 +29,8 @@ public class mainevent extends AppCompatActivity {
         setContentView(R.layout.activity_mainevent);
         textView = findViewById(R.id.textView);
         textwaktu = findViewById(R.id.textwaktu);
+        information = findViewById(R.id.information);
+        btnmulai = findViewById(R.id.btnmulai);
 
         Button button0 = findViewById(R.id.button0);
         Button button1 = findViewById(R.id.button1);
@@ -74,6 +77,9 @@ public class mainevent extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Log.i("were done", "no more countdown");
+                information.setText("DONE!");
+                btnmulai.setText("PLAY AGAIN");
+
             }
         }.start();
 
