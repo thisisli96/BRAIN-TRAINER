@@ -18,8 +18,17 @@ public class mainevent extends AppCompatActivity {
     ArrayList<Integer> answer = new ArrayList<>();
     TextView textwaktu , information ;
     Button btnmulai;
+    int locationCorrectAnswer;
+
     public void chooseAnswer(View view){
-        Log.i("tag : ", view.getTag().toString()); // memdapatkan tag button jawaban yang dipilih
+       // Log.i("tag : ", view.getTag().toString()); // memdapatkan tag button jawaban yang dipilih
+        if  (Integer.toString(locationCorrectAnswer).equals(view.getTag().toString())){ // membandingkan jawaban yang di pilih dengan soalnya
+            Log.i("correct!","you got it");
+
+        } else {
+            Log.i("incorrect","try again");
+        }
+
     }
 
     public void mulaigame(View view){
@@ -45,7 +54,7 @@ public class mainevent extends AppCompatActivity {
         int b = rand.nextInt(21);
         textView.setText(Integer.toString(a) + " + " + Integer.toString(b));
 
-        int locationCorrectAnswer =rand.nextInt(4);
+        locationCorrectAnswer =rand.nextInt(4);
         for (int i= 0; i < 4; i++){
 
             if (i == locationCorrectAnswer){
