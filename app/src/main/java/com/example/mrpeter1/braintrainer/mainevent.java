@@ -3,6 +3,9 @@ package com.example.mrpeter1.braintrainer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -13,11 +16,18 @@ import java.util.Random;
 public class mainevent extends AppCompatActivity {
     TextView textView;
     ArrayList<Integer> answer = new ArrayList<>();
+    TextView textwaktu ;
+
+
+    public void mulaigame(View view){
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainevent);
         textView = findViewById(R.id.textView);
+        textwaktu = findViewById(R.id.textwaktu);
 
         Button button0 = findViewById(R.id.button0);
         Button button1 = findViewById(R.id.button1);
@@ -50,6 +60,23 @@ public class mainevent extends AppCompatActivity {
         button1.setText(Integer.toString(answer.get(1)));
         button2.setText(Integer.toString(answer.get(2)));
         button3.setText(Integer.toString(answer.get(3)));
+
+
+        //---------------------------------- timer ------------------------------------
+
+        CountDownTimer countDownTimer = new CountDownTimer(30000,100) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Log.i("secong left", String.valueOf((millisUntilFinished / 1000)));
+                textwaktu.setText(String.valueOf((millisUntilFinished / 1000)));
+            }
+
+            @Override
+            public void onFinish() {
+                Log.i("were done", "no more countdown");
+            }
+        }.start();
+
 
     }
 }
